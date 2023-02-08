@@ -13,7 +13,7 @@ foreach ($automobiles as $automobile) {
                   <td>' . $automobile->preco . '</td>
                   <td>' . $automobile->preco_fipe . '</td>
                   <td>
-                    <a href = "editar.php?id=' . $automobile->id . '">
+                    <a href = "edit.php?id=' . $automobile->id . '">
                       <button type ="button" class="btn btn-primary">Editar</button>
                     </a>
                     </td>

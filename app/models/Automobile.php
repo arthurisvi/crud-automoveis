@@ -16,11 +16,30 @@ class Automobile {
   public $preco;
   public $preco_fipe;
 
-  public function save(){
+  public function create(){
 
     $database = new Database('automoveis');
     $repository = new DatabaseRepository($database);
     $this->id = $repository->insert([
+      'descricao' => $this->descricao,
+      'placa' => $this->placa,
+      'ano_modelo' => $this->ano_modelo,
+      'ano_fabricacao' => $this->ano_fabricacao,
+      'cor' => $this->cor,
+      'km' => $this->km,
+      'marca' => $this->marca,
+      'preco' => $this->preco,
+      'preco_fipe' => $this->preco_fipe
+    ]);
+
+    return true;
+  }
+
+  public function merge(){
+    $database = new Database('automoveis');
+    $repository = new DatabaseRepository($database);
+    
+    $repository->update('id = ' . $this->id, [
       'descricao' => $this->descricao,
       'placa' => $this->placa,
       'ano_modelo' => $this->ano_modelo,
@@ -40,6 +59,13 @@ class Automobile {
     $result = $repository->select($where, $order, $limit);
 
     return $result->fetchAll(PDO::FETCH_CLASS, self::class);
+  }
+
+  public static function find($id){
+    $repository = new DatabaseRepository((new Database('automoveis')));
+    $result = $repository->select('id = ' . $id);
+
+    return $result->fetchObject(self::class);
   }
 
 }

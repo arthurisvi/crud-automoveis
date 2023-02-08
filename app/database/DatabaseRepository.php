@@ -22,6 +22,16 @@ class DatabaseRepository {
     return $this->database->connection->lastInsertId();
   }
 
+  public function update($where, $values){
+    $fields = array_keys($values);
+
+    $query = 'UPDATE ' . $this->database->table . ' SET ' . implode('=?,', $fields) . '=? WHERE ' . $where;
+
+    $this->database->execute($query, array_values($values));
+
+    return true;
+  }
+
   public function select($where = null, $order = null, $limit = null, $fields = '*'){
     $where = strlen($where) ? 'WHERE ' . $where : '';
     $order = strlen($order) ? 'ORDER BY ' . $order : '';

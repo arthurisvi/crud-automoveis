@@ -25,7 +25,7 @@ if (count(array_filter($data)) === count($data)) {
     $automobile->marca = $data['marca'];
     $automobile->preco = $data['preco'];
     $automobile->preco_fipe = $data['preco_fipe'];
-    $automobile->save();
+    $automobile->create();
 
     header('location: /index.php?status=success');
     exit;
