@@ -6,7 +6,7 @@ services:
   ports:
    - "80:80"
   volumes:
-   - ./www:/www
+   - ./app:/app
    - ./site.conf:/etc/nginx/conf.d/site.conf
   links:
   - php
@@ -14,7 +14,7 @@ services:
   build: .
   container_name: php-fpm
   volumes:
-  - ./www:/www
+  - ./app:/app
   links:
   - db
  db:
