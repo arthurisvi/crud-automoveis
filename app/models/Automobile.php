@@ -35,4 +35,11 @@ class Automobile {
     return true;
   }
 
+  public static function all($where = null, $order = null, $limit = null){
+    $repository = new DatabaseRepository((new Database('automoveis')));
+    $result = $repository->select($where, $order, $limit);
+
+    return $result->fetchAll(PDO::FETCH_CLASS, self::class);
+  }
+
 }
