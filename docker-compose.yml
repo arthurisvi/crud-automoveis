@@ -11,7 +11,7 @@ services:
   links:
   - php
  php:
-  image: php:7.4-fpm
+  build: .
   container_name: php-fpm
   volumes:
   - ./www:/www
