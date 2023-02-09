@@ -27,9 +27,21 @@ foreach ($automobiles as $automobile) {
 ?>
 
 <main class="mt-3">
-  <section>
+  <section class="d-flex justify-content-between mb-5">
+    <form method="post">
+      <div class="form-group d-flex align-items-center">
+        <input type="text" class="form-control" name="descricao" placeholder="Descrição">
+        <select class="form-select mx-3" name="marca">
+          <option selected value="fiat">Fiat</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <button type="submit" class="btn btn-primary" name = "search">Pesquisar</button>
+      </div>
+    </form>
     <a href="register.php">
-      <button class="btn btn-primary">Nova vaga</button>
+      <button class="btn btn-primary">Novo</button>
     </a>
   </section>
 
@@ -46,7 +58,7 @@ foreach ($automobiles as $automobile) {
           <th>Marca</th>
           <th>Preço</th>
           <th>Preço Fipe</th>
-          <th>Ações</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
