@@ -18,7 +18,7 @@ foreach ($automobiles as $automobile) {
                     </a>
                     </td>
                   <td>
-                    <a href = "excluir.php?id=' . $automobile->id . '">
+                    <a href = "delete.php?id=' . $automobile->id . '">
                       <button type ="button" class="btn btn-danger">Excluir</button>
                     </a>  
                   </td>

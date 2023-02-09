@@ -68,4 +68,11 @@ class Automobile {
     return $result->fetchObject(self::class);
   }
 
+  public function delete(){
+    $repository = new DatabaseRepository((new Database('automoveis')));
+    $repository->delete('id = ' . $this->id);
+
+    return true;
+  }
+
 }

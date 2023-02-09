@@ -41,4 +41,10 @@ class DatabaseRepository {
 
     return $this->database->execute($query);
   }
+
+  public function delete($where){
+    $query = 'DELETE FROM ' . $this->database->table . ' WHERE ' . $where;
+
+    return $this->database->execute($query);
+  }
 }
