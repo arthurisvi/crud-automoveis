@@ -3,6 +3,10 @@
     <div class="mt-3">
       <h3>Dados cadastrais</h3>
     </div>
+    <div class="row w-100 mb-3">
+      <div class="" style="border-bottom: 1px solid rgba(0, 0, 0, 0.2);"></div>
+    </div>
+
     <div>
       <form method="post">
 
@@ -55,6 +59,51 @@
     </div>
     <div class="mt-3">
       <h3>Componentes Adicionais</h3>
+    </div>
+    <div class="row w-100 mb-3">
+      <div class="" style="border-bottom: 1px solid rgba(0, 0, 0, 0.2);"></div>
+    </div>
+
+    <div class="form-group form-check d-flex">
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check1">
+        <label class="form-check-label" for="check1">Ar condicionado</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check2">
+        <label class="form-check-label" for="check2">Air bag</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check3">
+        <label class="form-check-label" for="check3">CD player</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check4">
+        <label class="form-check-label" for="check4">Direção hidráulica</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check5">
+        <label class="form-check-label" for="check5">Vidro elétrico</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check6">
+        <label class="form-check-label" for="check6">Trava elétrica</label>
+      </div>
+    </div>
+
+    <div class="form-group form-check d-flex mt-2">
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check1">
+        <label class="form-check-label" for="check1">Câmbio automático</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check2">
+        <label class="form-check-label" for="check2">Rodas de liga</label>
+      </div>
+      <div class="col-md-2">
+        <input type="checkbox" class="form-check-input" id="check3">
+        <label class="form-check-label" for="check3">Alarme</label>
+      </div>
     </div>
 
     <div class="d-flex mt-5">

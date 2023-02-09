@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" class="d-flex align-items-center" style="color: white; font-size: 22px">
         <img src="https://i.ibb.co/K7vDSm0/corrida-1.png" width="52px">
-        Bling Automoveis
+        <strong>Bling Automoveis</strong>
       </a>
     </div>
   </nav>
