@@ -14,8 +14,9 @@ $data = [
   'preco_fipe' => $_POST['preco_fipe']
 ];
 
+$automobile = new Automobile;
+
 if (count(array_filter($data)) === count($data)) {
-    $automobile = new Automobile;
     $automobile->descricao = $data['descricao'];
     $automobile->placa = $data['placa'];
     $automobile->ano_modelo = $data['ano_modelo'];
