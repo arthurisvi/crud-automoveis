@@ -10,9 +10,12 @@
 
 <body>
 
-  <div class="container">
-
-    <div class="jumbotron bg-success p-3">
-      <h1>Bling Automoveis</h1>
-      <p>Sistema de gerenciamento de automoveis</p>
+  <nav class="navbar navbar-light bg-success p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" class="d-flex align-items-center" style="color: white; font-size: 22px">
+        <img src="https://i.ibb.co/K7vDSm0/corrida-1.png" width="52px">
+        Bling Automoveis
+      </a>
     </div>
+  </nav>
+  <div class="container">
