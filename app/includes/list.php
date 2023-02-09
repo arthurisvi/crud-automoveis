@@ -1,4 +1,14 @@
 <?php
+
+$nextDisabled = $page + 1 > $totalPages;
+$prevDisabled = $page - 1 === 0;
+
+$pages = '';
+
+for ($i = 0; $i < $totalPages; $i++) {
+  $pages .= '<li class="page-item"><a class="page-link" href="?page=' . ($i + 1) . '">' . ($i + 1) . '</a></li>';
+}
+
 $message = '';
 
 if (isset($_GET['status'])) {
@@ -75,7 +85,7 @@ $results = strlen($results) ? $results : '<tr>
           <th>Km</th>
           <th>Marca</th>
           <th>Preço</th>
-          <th>Preço Fipe</th>
+          <th>Preço FIPE</th>
           <th></th>
           <th></th>
         </tr>
@@ -89,16 +99,14 @@ $results = strlen($results) ? $results : '<tr>
   <section class="d-flex flex-row-reverse mt-4">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
+        <li class="page-item <?= $prevDisabled ? 'disabled' : ''  ?>">
+          <a class="page-link" href="<?= "?page=" . ($page - '1')  ?>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-        <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-        <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
+        <?= $pages ?>
+        <li class="page-item <?= $nextDisabled ? 'disabled' : ''  ?>">
+          <a class="page-link" href="<?= "?page=" . ($page + '1')  ?>" aria-disabled="true" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
