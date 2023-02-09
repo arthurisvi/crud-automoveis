@@ -32,12 +32,13 @@ class DatabaseRepository {
     return true;
   }
 
-  public function select($where = null, $order = null, $limit = null, $fields = '*'){
+  public function select($where = null, $order = null, $limit = null, $offset = null, $fields = '*'){
     $where = strlen($where) ? 'WHERE ' . $where : '';
     $order = strlen($order) ? 'ORDER BY ' . $order : '';
     $limit = strlen($limit) ? 'LIMIT ' . $limit : '';
+    $offset = strlen($offset) ? 'OFFSET ' . $offset : '';
 
-    $query = 'SELECT ' . $fields . ' FROM ' . $this->database->table . ' ' . $where . ' ' . $order . ' ' . $limit;
+    $query = 'SELECT ' . $fields . ' FROM ' . $this->database->table . ' ' . $where . ' ' . $order . ' ' . $limit . ' ' . $offset;
 
     return $this->database->execute($query);
   }
