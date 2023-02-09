@@ -1,4 +1,17 @@
 <?php
+$message = '';
+
+if (isset($_GET['status'])) {
+  switch ($_GET['status']) {
+    case 'success':
+      $message = '<div class="alert alert-success">Ação executada com sucesso!</div>';
+      break;
+    case 'error':
+      $message = '<div class="alert alert-danger">Ação não executada!</div>';
+      break;
+  }
+}
+
 $results = '';
 
 foreach ($automobiles as $automobile) {
@@ -16,7 +29,7 @@ foreach ($automobiles as $automobile) {
                     <a href = "edit.php?id=' . $automobile->id . '">
                       <button type ="button" class="btn btn-primary">Editar</button>
                     </a>
-                    </td>
+                  </td>
                   <td>
                     <a href = "delete.php?id=' . $automobile->id . '">
                       <button type ="button" class="btn btn-danger">Excluir</button>
@@ -24,9 +37,14 @@ foreach ($automobiles as $automobile) {
                   </td>
                 </tr>';
 }
+
+$results = strlen($results) ? $results : '<tr>
+  <td colspan="10" class="text-center">No momento, não existem automóveis cadastrados.</td>
+</tr>'
 ?>
 
 <main class="mt-3">
+  <?= $message ?>
   <section class="d-flex justify-content-between mb-5">
     <form method="post">
       <div class="form-group d-flex align-items-center">
@@ -37,7 +55,7 @@ foreach ($automobiles as $automobile) {
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
-        <button type="submit" class="btn btn-primary" name = "search">Pesquisar</button>
+        <button type="submit" class="btn btn-primary" name="search">Pesquisar</button>
       </div>
     </form>
     <a href="register.php">
@@ -66,6 +84,26 @@ foreach ($automobiles as $automobile) {
         <?= $results ?>
       </tbody>
     </table>
+  </section>
+
+  <section class="d-flex flex-row-reverse mt-4">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+        <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+        <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </section>
 
 </main>
