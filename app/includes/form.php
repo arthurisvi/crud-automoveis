@@ -60,7 +60,7 @@
     <div class="d-flex mt-5">
       <button type="submit" class="btn btn-success">Salvar</button>
       <a href="index.php">
-        <button class="btn btn-danger mx-3">Cancelar</button>
+        <button type="button" class="btn btn-danger mx-3">Cancelar</button>
       </a>
     </div>
 
