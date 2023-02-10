@@ -2,6 +2,7 @@
 
 include_once 'database/Database.php';
 include_once 'database/DatabaseRepository.php';
+include_once 'services/GenerateReportService.php';
 
 class Automobile {
 
@@ -73,6 +74,12 @@ class Automobile {
     $repository->delete('id = ' . $this->id);
 
     return true;
+  }
+
+  public static function generateReport(){
+    $generateXls = new GenerateReportService('automoveis', self::class);
+
+    return $generateXls->execute();
   }
 
 }

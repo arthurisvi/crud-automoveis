@@ -68,9 +68,14 @@ $results = strlen($results) ? $results : '<tr>
         <button type="submit" class="btn btn-primary" name="search">Pesquisar</button>
       </div>
     </form>
-    <a href="register.php">
-      <button class="btn btn-primary">Novo</button>
-    </a>
+    <div class = "d-flex">
+      <form method="post">
+          <button class="btn btn-success mx-2" type ="submit" name = "generateReport">Gerar relatório</button>
+      </form>
+      <a href="register.php">
+        <button class="btn btn-primary">Novo</button>
+      </a>
+    </div>
   </section>
 
   <section>

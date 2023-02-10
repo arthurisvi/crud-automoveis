@@ -19,6 +19,11 @@ if(isset($_POST['search'])){
   OR UPPER(marca) LIKE UPPER('%" . $_POST['marca'] . "%')", null, $itemsPerPage,$paginate);
 }
 
+if(isset($_POST['generateReport'])){
+  Automobile::generateReport();
+
+}
+
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/list.php';
 include __DIR__ . '/includes/footer.php';
