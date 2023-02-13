@@ -41,10 +41,10 @@
           <div class="col-md-2 mx-2">
             <label>Marca</label>
             <select class="form-select" name="marca">
-              <option selected value="fiat">Fiat</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="fiat" <?= $automobile->marca == "fiat" ? "selected" : "" ?>>Fiat</option>
+              <option value="1" <?= $automobile->marca == "1" ? "selected" : "" ?>>One</option>
+              <option value="2" <?= $automobile->marca == "2" ? "selected" : "" ?>>Two</option>
+              <option value="3" <?= $automobile->marca == "3" ? "selected" : "" ?>>Three</option>
             </select>
           </div>
           <div class="col-md-2">
